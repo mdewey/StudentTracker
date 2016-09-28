@@ -2,9 +2,9 @@ namespace StudentTrackerWeb
 {
     using Nancy;
 
-    public class HomeModule : NancyModule
+    public class StudentsModule : NancyModule
     {
-        public HomeModule()
+        public StudentsModule() : base("/students")
         {
             Get("/", _ => "Hello World");
             Get("/hello", _ => "This is my other page");
