@@ -10,7 +10,6 @@ namespace StudentTrackerWeb.Controllers
 {
     public class HomeController : Controller
     {
-
         private StudentContext _context;
 
         public HomeController(StudentContext context)
@@ -24,6 +23,9 @@ namespace StudentTrackerWeb.Controllers
             return View(model);
         }
 
+
+
+        // Other Routes
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
