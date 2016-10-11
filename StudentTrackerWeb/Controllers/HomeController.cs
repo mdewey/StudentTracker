@@ -23,6 +23,24 @@ namespace StudentTrackerWeb.Controllers
             return View(model);
         }
 
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Students.Add(student);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(student);
+        }
 
 
         // Other Routes
